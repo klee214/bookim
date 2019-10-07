@@ -1,0 +1,220 @@
+#home h2 {
+    color: whitesmoke;
+}
+body {
+    min-height: 100%;
+    min-width: 100%;
+    margin: 0%;
+}
+#home{
+    z-index: 0;
+}
+
+.bgVideo{
+    position: absolute;
+    top: 0;
+    height: 100% !important;
+    min-height: 700px;
+    width: 100%;
+    overflow: hidden;
+    z-index: -100;
+}
+.bgBlack{
+    background-color: rgba(29, 28, 28, 0.4);
+    position: absolute;
+    top: 0;
+    height: 100% !important;
+    min-height: 700px;
+    width: 100%;
+}
+
+#home .background{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+
+  z-index: -100;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+h2,p{
+    color: rgb(255, 255, 255);
+}
+
+section.main{
+    margin: 0 50px;
+}
+
+.checkDate, .firstInput{
+    display: flex;
+    flex-direction: row;
+}
+#guest{
+    width: 220px !important;
+    border-radius: 2px;
+    background-color: white;
+}  
+#guest:hover{
+    background-color: rgb(228, 222, 222);
+}
+
+#guestDrop{
+    width: 300px;
+    position: absolute;
+    background-color: rgba(100, 98, 98, 0.8);
+    margin: 0;
+    z-index: 10;
+    display: none;
+    visibility: hidden;
+}
+#guestDrop #aDrop{
+    margin: 10px;
+}
+#guestDrop input{
+    width:200px;
+    height: 50px;
+}
+
+#guestDrop #basic-addon2{
+    width: 80px;
+    font-size: 10pt;
+}
+
+#guestDrop .input-group-append{
+    height: 50px;
+}
+
+input{
+    box-sizing: border-box;
+    width: 300px;
+    height: 50px;
+    border: none;
+    color: black !important;
+}
+
+button[name="where"],input[name="checkout"]{
+    border-left: 0.5px dotted grey;
+}
+
+input[name="search"]{
+    background-color: rgb(216, 95, 95);
+    color: aliceblue;
+}
+
+input[type="text"], input[type="password"]{
+    padding: 0 0 0 10px;
+}
+
+button, select{
+    box-sizing: border-box;
+    width: 300px;
+    height: 50px;
+    border: none;
+    text-align: left;
+    background-color:white;
+}
+.buttonText{
+    margin: 12px 0 0 0;
+}
+
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    
+    border-bottom: 7px solid black;
+  }
+  
+  .arrow-down {
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    
+    border-top: 7px solid black;
+  }
+  .guestNum .arrow-down{
+    position: relative;
+    right: -250px;
+    top: -13px;
+  }
+  .guestNum .arrow-up{
+    position: relative;
+    right: -250px;
+    top: -19px;
+    visibility: hidden;
+  }
+
+#more{
+    margin: 17% 0 0 0;
+}
+
+#selectGuest .col-xs, #selectWhere .col-xs{
+    height: 50px;
+    width: 300px;
+    margin: 0 0 0 7px;
+    padding: 0 0 0 7px;
+    background-color: white;
+    z-index: 1;
+    border-top: 0.2px dotted grey; 
+
+}
+#more .row{
+    margin: auto;
+}
+
+#more .col-sm{
+    height: auto;
+    padding: 0 !important;
+    margin: 30px 0 50px 20px;
+    background-color: white;
+    border-radius: 17px;
+    min-width: 270px;
+    box-shadow: 5px 10px 10px #999797;
+}
+
+#more .col-sm img{
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
+    width: 100%;
+    height: 90%;
+}
+
+#more .col-sm:hover{
+    box-shadow: 10px 15px 20px #888888;
+    cursor: pointer;
+}
+#more .col-sm:active{
+    box-shadow: 5px 10px 10px #999797;
+    cursor: pointer;
+}
+
+.col-sm div, .col-sm h5{
+    text-align: center;
+}
+
+@media(max-width: 760px){
+    .checkDate input{
+        width: auto;
+        
+    }
+}
+
+@media(max-width: 989px){
+    #more{
+        margin: 25% 0 0 0;
+    }
+}
+
+@media(max-width: 756px){
+    #more{
+        margin: 30% 0 0 0;
+    }
+}
+

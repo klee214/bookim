@@ -1,0 +1,95 @@
+    <div id ="home">
+        <div class="bgVideo">
+          <video class = "background" autoplay="autoplay" loop="loop">
+            <source src="video/back.mp4" type="video/mp4">
+            <source src="video/back.ogg" type="video/ogg">
+            <source src="video/back.webm" type="video/webm">
+          </video>
+          <div class="bgBlack"></div>               
+        </div> 
+        <div style="z-index: 1;" class="container">
+            <section class = "main">
+                <br><br><br>
+                <h2 style="font-family: 'Cabin', sans-serif !important;">Explore!</h2>
+                <h2 style="font-family: 'Cabin', sans-serif !important;">Your amazing city</h2>
+                <p style="font-family: 'Cabin', sans-serif !important;">Find great places to stay, eat, shop or visit from local experts</p>
+                <form name = "home" method="POST" action="/messages">
+                  <fieldset>
+                    <div class="firstInput">
+                        <p><input type="text" class="rounded-left" placeholder="Ex: food,service,hotel" id="searchEngine" name="searchEngine"/></p>           
+                    </div>
+                    <br>
+                    <div class="checkDate">
+                        <p style="font-family: 'Cabin', sans-serif !important;">Check in date<br><input type="date" class="rounded-left" name="checkin" id="checkin"/></p>
+                        <p style="font-family: 'Cabin', sans-serif !important;">Check out date<br><input type="date" class="rounded-right" name="checkout" id="checkout"/></p>
+                    </div>
+                    <div id = "guestNum">
+                        <input type = "button" value="How many guests?" id = "guest" onclick="guestButton()">
+                        <div id ="guestDrop" class = "row">
+                            <div id = "aDrop" class="input-group mb-3">
+                                <input type="number" name = "adultNo" step="1" min="0" max="5" class="form-control" placeholder="The number of Adults" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">Adults</span>
+                                </div>
+                            </div>
+                            <div class="w-100"></div>
+                            <div id = "aDrop" class="input-group mb-3">
+                                <input type="number" name = "childNo" step="1" min="0" max="5" class="form-control" placeholder="The number of Children" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">Children</span>
+                                </div>
+                            </div>                           
+                        </div> 
+                    </div>
+                    <div class="where">
+                        <p style="font-family: 'Cabin', sans-serif !important;">Where<br>
+                            <select id = "where" name = "where" class="selectpicker" data-live-search="true">
+                                <option value="1" data-tokens="Canada">Canada</option>
+                                <option value="2" data-tokens="Europe">Europe</option>
+                                <option value="3" data-tokens="Asia">Asia</option>
+                            </select>
+                        </p>
+                    </div>
+                    <input style="font-family: 'Cabin', sans-serif !important;" type="submit" class="rounded" value="Search" name="search" id="serach"/>
+                  </fieldset>
+                </form>
+                <div id="more">
+                    <div class="row">
+                        <div class="col">
+                            <h3 style="font-family: 'Cabin', sans-serif !important;">Are you ready to be excited?</h3>
+                            <p  style="color: black !important; font-family: 'Cabin', sans-serif !important;">
+                            Multi-day trip led by local experts-activities, meals and stays included</p>
+                        </div>
+                        <img src="">
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <img src="https://cdn.pixabay.com/photo/2017/08/07/11/55/restaurants-2603048_960_720.jpg">
+                            <div style="font-family: 'Cabin', sans-serif !important; font-size: 14pt;" style="overflow-wrap: break-word;">
+                                  Local Restaurant
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <img src="https://c1.staticflickr.com/6/5586/15308319132_ba80423f0c_b.jpg">
+                            <div style="font-family: 'Cabin', sans-serif !important; font-size: 14pt;" style="overflow-wrap: break-word;">
+                                  Experience
+                            </div>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="col-sm">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Adventure-clouds-environment-672358.jpg">
+                            <div style="font-family: 'Cabin', sans-serif !important; font-size: 14pt;"style="overflow-wrap: break-word;">
+                                  Adventure
+                            </div>                      
+                        </div>
+                        <div class="col-sm">
+                            <img src="http://c1.peakpx.com/wallpaper/861/439/652/rendering-interior-hotel-wallpaper-preview.jpg">
+                            <div style="font-family: 'Cabin', sans-serif !important; font-size: 14pt;" style="overflow-wrap: break-word;">
+                                  Stay
+                            </div>                    
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>

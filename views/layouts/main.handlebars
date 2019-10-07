@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="css/main.css"  rel="stylesheet">
+    <link href="css/home.css"  rel="stylesheet">
+    <link href="css/room.css"  rel="stylesheet">
+    <link href="css/register.css"  rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Gudea|Sunflower:300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/room.js"></script>
+    <script src="js/register.js"></script>
+    <title>Bookim-Better Your Life</title>
+</head>
+<body>
+    <header>
+         <img class = "logo" src="eb5eb120-b01b-4f60-b96c-9c83232d5529_200x200.png">
+         <div class = "container-fluid">
+            <nav style="font-family: 'Cabin', sans-serif !important;" class="d-flex flex-row-reverse bd-highlight">
+                <div id="logColor" class="p-3 bd-highlight" onclick="log()">LOG IN</div>
+                <div class="p-3 bd-highlight"><a href="register">SIGN UP</a></div>
+                <div class="p-3 bd-highlight"><a href="room">ROOM</a></div>
+                <div class="p-3 bd-highlight"><a href="/">HOME</a></div>
+            </nav>
+            <div id="navMax300px">
+                <div><a href="/">HOME</a></div>
+                <div><a href="room">ROOM</a></div>
+                <div><a href="register">SIGN UP</a></div>
+                <div id="logColor" onclick="log()">LOG IN</div>
+            </div>
+         </div>
+    </header>
+        {{{body}}}
+    <div id = "logIn" class="container-fluid" onclick="closing()"></div>
+        <div id = "popup" class = "container">
+           <form id="log_in" method="post" action="">
+            <div class="row">
+                <div class="col">
+                    <button type="button" name="facebook" id="facebook">
+                        <div class= "f">f</div>
+                        <div style="margin: 10px auto 0;" style="font-family: 'Cabin', sans-serif !important;">Log in with Facebook</div>
+                    </button>
+                </div>
+                <div class="col">
+                    <button type="button" name="google" id="google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png">
+                        <div style="margin: 10px auto 0" style="font-family: 'Cabin', sans-serif !important;">Log in with Google</div>
+                    </button>
+                </div>
+                <hr>
+                <div class="col">
+                    <input type="text" placeholder="Email Address" name="email" id="email">
+                </div>
+                <div class="col">
+                    <input type="password" placeholder="Password" name="password" id="password">
+                </div>
+                <div class="col">
+                    <input type="checkbox" name="remember" id="remember"><label for = "remember" style="font-family: 'Cabin', sans-serif !important;">&nbsp;&nbsp;Remember me</label>
+                </div>
+                <div class="col">
+                    <input type="submit" value="Log in" name="log" id="log">
+                </div>
+                <div class="col">
+                    <div>
+                        <a  id ="popSign" href="register" style="font-family: 'Cabin', sans-serif !important;">Sign up</a>  
+                    </div>
+                </div>
+            </div>
+           </form>
+        </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <ul style="font-family: 'Cabin', sans-serif !important;"><span >BOOKIM</span><br><br>
+                        <li>
+                            Careers
+                        </li>
+                        <li>
+                            News
+                        </li>
+                        <li>
+                            Policies
+                        </li>
+                        <li>
+                            Help
+                        </li>
+                        <li>
+                            Diversity & Belonging
+                        </li>
+                        <li>
+                            Accessibility
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul style="font-family: 'Cabin', sans-serif !important;"><span>DISCOVER</span><br><br>
+                        <li>
+                            Trust & Safety
+                        </li>
+                        <li>
+                            Travel Credit
+                        </li>
+                        <li>
+                            BooKim Citizen
+                        </li>
+                        <li>
+                            Business Travel
+                        </li>
+                        <li>
+                            Guidebooks
+                        </li>
+                        <li>
+                            Bookimmag
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul style="font-family: 'Cabin', sans-serif !important;"><span>HOSTING</span><br><br>
+                        <li>
+                            Why Host
+                        </li>
+                        <li>
+                            Hospitality
+                        </li>
+                        <li>
+                            Responsible Hosting
+                        </li>
+                        <li>
+                            Community Center
+                        </li>
+                        <li>
+                           Host an Experience
+                        </li>
+                        <li>
+                            Open Homes
+                        </li>
+                    </ul>                    
+                </div>
+                <div class="col">
+                    <ul style="font-family: 'Cabin', sans-serif !important;">
+                        <li>
+                            <img src=""><img src=""><img src="">
+                        </li>
+                        <li>
+                            Terms
+                        </li>
+                        <li>
+                            Privacy
+                        </li>
+                        <li>
+                            Site Map
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p style="text-align: center font-family: 'Cabin', sans-serif !important;"><img class = "logoBottom" src="eb5eb120-b01b-4f60-b96c-9c83232d5529_200x200.png">
+                &nbsp;&nbsp; <img class ="copyRight" src="http://pngimg.com/uploads/copyright/copyright_PNG48.png">       
+               2019 Bookim, Inc. All rights reserved. Kimin Lee kiminlee0505@gmail.com</p>
+        </div>
+    </footer>
+ 
+</body>
+</html>

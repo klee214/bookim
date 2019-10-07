@@ -1,0 +1,83 @@
+#body{
+    text-align: center;
+    margin: 70px auto;
+    padding: 10px 0 20px 0;
+    max-width: 700px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 1); 
+    border-radius: 7px;
+    z-index: 3;
+    border: 1px solid rgb(41, 39, 39);
+    box-shadow: 5px 10px 10px #999797;
+}
+#backRegImg{
+    top:0;
+    left: 0;
+    position: absolute;
+    background-image: url('/video/sunset-on-the-beach-in-guam.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(75, 69, 69, 0.3);
+    width: 100%;
+    height: 60px; 
+    z-index: -10;
+}
+.bgCoverBlack{
+    top:0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(65, 61, 61, 0.4);
+    width: 100%;
+    height: 60px; 
+    z-index: -10;
+}
+
+#body:hover{
+    box-shadow: 10px 15px 20px #888888;
+}
+
+#body p, #body h5{
+    color: black;
+}
+
+#register .Reglogo{
+    width: 70px;
+    height: 70px;
+}
+
+#body input,#body select,#body button{
+    background-color: whitesmoke;
+    color: black; 
+}
+
+#body input[type="text"]{
+    border-bottom: 1px solid grey;
+}
+
+#register button{
+    box-sizing: border-box;
+    width: 100% !important;
+    height: 50px;
+    border: none;
+    text-align: left;
+    background-color: whitesmoke;
+}
+
+#body #check{
+    width: 15px;
+    height: 15px;
+}
+@media(max-width: 349px){
+    #body input[type="text"]{
+        border: 1px solid grey;
+    }
+}
+
+@media(max-width: 606px){
+    #backRegImg{
+        height: 160px; 
+    }
+}
+
