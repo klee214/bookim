@@ -1,6 +1,11 @@
 #home h2 {
     color: whitesmoke;
 }
+#home h3{
+    font-weight: bolder;
+    font-size: 22pt;
+}
+
 body {
     min-height: 100%;
     min-width: 100%;
@@ -151,8 +156,73 @@ button, select{
     visibility: hidden;
   }
 
+.promotionBg{
+    position: absolute;
+    left: 0;
+    width: 3000px;
+    height: 600px;
+    background-image: url("/video/football-fanshawe-decor-iliving-accents-outdoor-asda-designer-sofas-attic-furniture-sets-living-astounding-campus-chairs-room-cooling-big-fancy-billboard-for-fans-expenses.png");
+    background-repeat: no-repeat;
+    background-size: cover contain;
+}
+.promotionBgBlack{
+    position: absolute;
+    left: 0;
+    width: 3000px;
+    height: 600px;
+    background-color: rgba(8, 8, 8, 0.6)
+}
+
+#promotion{
+    margin: 19% 0 0 0;
+    width: 100%;
+}
+
+#promotion .row{
+    margin: 0;
+    height: 100%;
+}
+
+#promotion .row .col-sm-3, #promotion .row .col-sm-5, #promotion .row .col-sm-4{
+    height: auto;
+    margin: 0%;
+    padding: 0;
+    font-family: 'Sunflower', sans-serif;
+    font-weight: bold;
+}
+
+#promotion .row div img{
+    width: 100%;
+    height: 300px;
+    opacity: 0.9;
+}
+
+#asia, #price, #family, #food, #tradition, #cozy{
+    top:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: aliceblue;
+    background-color:rgba(10, 9, 9, 0.7);
+    text-align: center;
+    font-size: 18pt;
+    padding: 30% 5% 0 5%;
+    visibility: hidden;
+    display: block;
+}
+.im1:hover, .im2:hover,.im3:hover,.im4:hover,.im5:hover,.im6:hover{
+    opacity: 0.4;
+}
+
+.im1:hover + #asia, #asia:hover,.im2:hover + #price, #price:hover,.im3:hover + #family, #family:hover,
+.im4:hover + #food, #food:hover,.im5:hover + #tradition, #tradition:hover,.im6:hover + #cozy, #cozy:hover{
+    display: block;
+    visibility: visible;
+}
+
+
 #more{
-    margin: 17% 0 0 0;
+    margin: 3% 0 0 0;
 }
 
 #selectGuest .col-xs, #selectWhere .col-xs{
@@ -198,11 +268,30 @@ button, select{
 .col-sm div, .col-sm h5{
     text-align: center;
 }
+@media(max-width: 1186px){
+    #promotion .row div img{
+        height: 250px;
+    }
+    .promotionBg, .promotionBgBlack{
+        height: 500px;
+    }
+}
+@media(max-width:978px){
+    #promotion .row div img{
+        height: 200px;
+    }
+    .promotionBg, .promotionBgBlack{
+        height: 400px;
+    }
+}
 
 @media(max-width: 760px){
     .checkDate input{
         width: auto;
-        
+    }
+    #promotion{
+        display: none;
+        visibility: hidden;
     }
 }
 
