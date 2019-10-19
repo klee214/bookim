@@ -12,6 +12,10 @@
     border: 1px solid rgb(41, 39, 39);
     box-shadow: 5px 10px 10px #999797;
 }
+#register select{ 
+    width: auto;
+    min-width: 100px;
+}
 #backRegImg{
     top:0;
     left: 0;

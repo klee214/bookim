@@ -1,20 +1,10 @@
     <div id ="home">
-        <div class="bgVideo">
-          <video class = "background" autoplay="autoplay" loop="loop">
-            <source src="video/back.mp4" type="video/mp4">
-            <source src="video/back.ogg" type="video/ogg">
-            <source src="video/back.webm" type="video/webm">
-          </video>
-          <div class="bgBlack"></div>               
-        </div> 
-        <div style="z-index: 1;" class="container">
-            <section class = "main">
-                <br><br><br>
-                <h2 style="font-family: 'Cabin', sans-serif !important;">Explore!</h2>
-                <h2 style="font-family: 'Cabin', sans-serif !important;">Your amazing city</h2>
-                <p style="font-family: 'Cabin', sans-serif !important;">Find great places to stay, eat, shop or visit from local experts</p>
-                <form name = "home" method="POST" action="/messages">
-                  <fieldset>
+        <div class="inputContainer">
+            <h1 style="font-family: 'Cabin', sans-serif !important;">Explore!</h1>
+            <h2 style="font-family: 'Cabin', sans-serif !important;">Your amazing city</h2>
+            <p style="font-family: 'Cabin', sans-serif !important;">Find great places to stay, eat, shop or visit from local experts</p>
+            <form name = "home" method="POST" action="/messages">
+                <fieldset>
                     <div class="firstInput">
                         <p><input type="text" class="rounded-left" placeholder="Ex: food,service,hotel" id="searchEngine" name="searchEngine"/></p>           
                     </div>
@@ -24,7 +14,7 @@
                         <p style="font-family: 'Cabin', sans-serif !important;">Check out date<br><input type="date" class="rounded-right" name="checkout" id="checkout"/></p>
                     </div>
                     <div id = "guestNum">
-                        <input type = "button" value="How many guests?" id = "guest" onclick="guestButton()">
+                        <p style="font-family: 'Cabin', sans-serif !important;margin:0;">Guests<br><input type = "button" value="How many guests?" id = "guest" onclick="guestButton()"></p>
                         <div id ="guestDrop" class = "row">
                             <div id = "aDrop" class="input-group mb-3">
                                 <input type="number" name = "adultNo" step="1" min="0" max="5" class="form-control" placeholder="The number of Adults" aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -39,20 +29,38 @@
                                     <span class="input-group-text" id="basic-addon2">Children</span>
                                 </div>
                             </div>                           
+                        </div>
+                        <div class="dropdown">
+                            <p style="font-family: 'Cabin', sans-serif !important; margin:0;">Where<br><input type="button" value = "Search by City!" onclick="myFunction()" class="dropbtn"></p>
+                            <div id="myDropdown" class="dropdown-content">
+                                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                                <a href="#about">About</a>
+                                <a href="#base">Base</a>
+                                <a href="#blog">Blog</a>
+                                <a href="#contact">Contact</a>
+                                <a href="#custom">Custom</a>
+                                <a href="#support">Support</a>
+                                <a href="#tools">Tools</a>
+                            </div>
                         </div> 
                     </div>
                     <div class="where">
-                        <p style="font-family: 'Cabin', sans-serif !important;">Where<br>
-                            <select id = "where" name = "where" class="selectpicker" data-live-search="true">
-                                <option value="1" data-tokens="Canada">Canada</option>
-                                <option value="2" data-tokens="Europe">Europe</option>
-                                <option value="3" data-tokens="Asia">Asia</option>
-                            </select>
-                        </p>
                     </div>
-                    <input style="font-family: 'Cabin', sans-serif !important;" type="submit" class="rounded" value="Search" name="search" id="serach"/>
-                  </fieldset>
-                </form>
+                    <input style="font-family: 'Cabin', sans-serif !important; margin: 10px 0 0 0;" type="submit" class="rounded" value="Search" name="search" id="serach"/>
+                </fieldset>
+            </form>  
+        </div>  
+        <div class="bgVideo">
+            <video class = "background" autoplay="autoplay" loop="loop">
+            <source src="video/back.mp4" type="video/mp4">
+            <source src="video/back.ogg" type="video/ogg">
+            <source src="video/back.webm" type="video/webm">
+            </video>            
+            <div class="bgBlack"></div>           
+        </div> 
+        <div style="z-index: 1;" class="container">
+            <section class = "main">
+                <br><br><br>
                 <div id ="promotion">
                     <h3 style="font-family: 'Cabin', sans-serif !important;">What's so special about BOOKIM?</h3>
                     <p  style="color: black !important; font-family: 'Cabin', sans-serif !important;">

@@ -1,4 +1,7 @@
-
+body, html {
+    height: 100%;
+    margin: 0;
+  }
 header{
     display: flex;
     flex-direction: row;
@@ -18,12 +21,80 @@ nav{
     visibility: hidden;
     text-align: center;
 }
+.logoFooter{
+    width: 40px;
+    height: 40px;
+}
+
+#footerNav{
+    background-color:rgba(216, 88, 88, 0.8);
+    border-radius: 5px;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    width: 280px;
+    height: 43px;
+    font-size: 10pt;
+    font-weight: bolder;
+    text-align: center;
+    color: blanchedalmond;
+    box-shadow: 2px 7px 7px #999797;
+    font-family: 'Cabin', sans-serif !important;
+}
+#footerClose{
+    display: none;
+    visibility: hidden;
+    background-color:rgba(90, 84, 84, 0.8);
+    border-radius: 5px;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    width: 110px;
+    height: 30px;
+    font-size: 10pt;
+    font-weight: bolder;
+    text-align: center;
+    color: blanchedalmond;
+    font-family: 'Cabin', sans-serif !important;
+    z-index: 1000;
+}
+#footerClose span{
+    color: rgba(228, 62, 62, 0.8);
+    font-size: 14pt;
+    font-weight: 700;
+}
+#footerClose:hover{
+    background-color: rgba(82, 75, 75, 0.8);
+    cursor: pointer;
+}
+
+#footerClose:active{
+    width: 100px;
+    height: 29px;
+    right: 2.5%;
+    bottom: 2.5%;
+}
+
+#footerNav:hover{
+    background-color: rgba(180, 84, 84, 0.8);
+    cursor: pointer;
+}
+#footerNav:active{
+    width: 260px;
+    height: 39px;
+    right: 3%;
+    bottom: 3%;
+}
 
 footer{
+    display: none;
+    visibility: hidden;
+    position: fixed;
+    bottom: 0%;
     border-top: 0.5px grey solid;
     background-color: rgba(0, 0, 0,0.8);
     margin: auto;
-    widows: 80%;
+    width: 100%;
     color: aliceblue;
 }
 ul span{
@@ -141,7 +212,7 @@ button img{
 }
 
 
-@media (max-width: 620px){
+@media (max-width: 606px){
     nav{
         display: none;
         visibility: hidden;
