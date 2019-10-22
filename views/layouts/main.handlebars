@@ -19,7 +19,7 @@
 </head>
 <body>
     <header>
-         <img class = "logo" src="eb5eb120-b01b-4f60-b96c-9c83232d5529_200x200.png">
+         <a href="/"><img class = "logo" src="eb5eb120-b01b-4f60-b96c-9c83232d5529_200x200.png"></a>
          <div class = "container-fluid">
             <nav style="font-family: 'Cabin', sans-serif !important;" class="d-flex flex-row-reverse bd-highlight">
                 <div id="logColor" class="p-3 bd-highlight" onclick="log()">LOG IN</div>
@@ -38,7 +38,7 @@
         {{{body}}}
     <div id = "logIn" class="container-fluid" onclick="closing()"></div>
         <div id = "popup" class = "container">
-           <form id="log_in" method="post" action="">
+           <form id="log_in" name = "log_id" method="POST" action="/" onsubmit= 'return formVal()'>
             <div class="row">
                 <div class="col">
                     <button type="button" name="facebook" id="facebook">
@@ -54,13 +54,20 @@
                 </div>
                 <hr>
                 <div class="col">
-                    <input type="text" placeholder="Email Address" name="email" id="email">
+                    <input type="text" placeholder="Email Address" name="email" id="email" required = 'required'>
+                </div>
+                <div class ="col" id ="emailError">
+
                 </div>
                 <div class="col">
                     <input type="password" placeholder="Password" name="password" id="password">
                 </div>
+                <div class ="col" id ="passError">
+
+                </div>
+                <div class = "w-100"></div>
                 <div class="col">
-                    <input type="checkbox" name="remember" id="remember"><label for = "remember" style="font-family: 'Cabin', sans-serif !important;">&nbsp;&nbsp;Remember me</label>
+                    <input type="checkbox" name="remember" id="remember"><label for = "remember" style="font-family: 'Cabin', sans-serif !important;" required = 'required'>&nbsp;&nbsp;Remember me</label>
                 </div>
                 <div class="col">
                     <input type="submit" value="Log in" name="log" id="log">

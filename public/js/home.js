@@ -1,4 +1,5 @@
 let guestClickCount = 0;
+let myFunctionCount = 0;
 
 const guestButton = ()=>{
     if(guestClickCount % 2 != 1){
@@ -37,6 +38,15 @@ const guestNoChange = ()=>{
 }
 const myFunction = ()=> {
   document.getElementById("myDropdown").classList.toggle("show");
+  const dropbtn = document.querySelector('.dropbtn')
+
+  myFunctionCount++
+  
+  if(myFunctionCount % 2 == 1 ){
+    dropbtn.style.backgroundColor = "rgb(216, 207, 207)";
+  }else{
+    dropbtn.style.backgroundColor = "white"
+  }
 }
 
 const filterFunction = () => {

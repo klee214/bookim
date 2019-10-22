@@ -2,7 +2,7 @@
 <div class = "bgCoverBlack"></div>
 <div id = "register">
   <div class = "container" id="body">
-    <form method="POST" method="/messages">
+    <form method="POST" id = "registerForm" name = "registerForm" method="/register" >
       <div class="row">
         <div class="col">
            <img class = "Reglogo" src="eb5eb120-b01b-4f60-b96c-9c83232d5529_200x200-2.png">
@@ -13,7 +13,7 @@
         </div>
         <div class="w-100"></div>
         <div class="col">
-            <input type="text" name="email" id="email" placeholder="email address">
+            <input type="text" name="regemail" id="regemail" placeholder="email address">
             <img id="emailImg">
         </div>
         <div class="w-100"></div>
@@ -28,8 +28,16 @@
         </div>
         <div class="w-100"></div>
         <div class="col">
-            <input type="password" placeholder="create a password" id = "password"name="password">
+            <input type="password" placeholder="create a password" id = "regpassword"name="regpassword">
             <img id="passwordImg">
+        </div>
+        <div class="w-100"></div>
+        <div id = "errMess" class = "col">
+            {{#each errMessage}}
+                <p style="color: white; margin: 2% 0; background-color:  rgb(240, 126, 126)">
+                    {{this}}
+                </p>
+            {{/each}}
         </div>
         <div class="w-100"></div>
         <div style="font-family: 'Cabin', sans-serif !important;" class="col">
