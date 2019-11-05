@@ -31,6 +31,36 @@ app.get("/register",(req,res)=>{
     res.render("register");
 });
 
+const mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://kiminlee:als246800@cluster0-ow8ur.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true})
+.then(()=>{
+    console.log("succeed to log onto mongoose!!")
+})
+.catch((err)=>{
+    console.log("fail to log onto mongoose..." + `${err}`)
+})
+
+const schema = mongoose.Schema
+const userAccSchema = new schema({
+    email:{
+        type:String,
+        required:true
+    },
+    fname:{
+        type:String,
+        required:true
+    },
+    lname:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    }
+})
+const userAcc = mongoose.model('userAcc',userAccSchema);
+
 app.post("/",(req,res)=>{
     const errorMessage = [];
 
@@ -131,36 +161,6 @@ app.post("/register",(req,res)=>{
             }
             console.log(res);
         });
-
-        const mongoose = require('mongoose');
-        mongoose.connect('mongodb+srv://kiminlee:als246800@cluster0-ow8ur.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true})
-        .then(()=>{
-            console.log("succeed to log onto mongoose!!")
-        })
-        .catch((err)=>{
-            console.log("fail to log onto mongoose..." + `${err}`)
-        })
-
-        const schema = mongoose.Schema
-        const userAccSchema = new schema({
-            email:{
-                type:String,
-                required:true
-            },
-            fname:{
-                type:String,
-                required:true
-            },
-            lname:{
-                type:String,
-                required:true
-            },
-            password:{
-                type:String,
-                required:true
-            }
-        })
-        const userAcc = mongoose.model('userAcc',userAccSchema);
         const user = new userAcc({
             email:`${req.body.regemail}`,
             fname: `${req.body.fname}`,
