@@ -1,0 +1,19 @@
+<div id ="backRegImg"></div>
+<div class = "bgCoverBlack"></div>
+<h2>Welcome {{user.fname}} {{user.lname}}</h2>
+
+<div id="EditingRoom" class = "container-fluid">
+    <h2>The rooms you booked!</h2>
+     <h4>Don't forget to enjoy your time</h4>
+</div>
+<div class = "row">
+    {{#each bookedRooms}}
+        <div class = "col">
+            <div class = "roomImg"><img class="img-thumbnail" src="/uploads/{{this.picURL}}"></div>
+            <p>{{this.title}}</p>
+            <h4>Entire house - 2 beds</h4>
+            <h4>{{this.location.city}} {{this.location.province}} {{this.location.country}}</h4>
+            <h4><strong>{{this.price}} CAD</strong>/night</h4>                    
+        </div>
+    {{/each}}       
+</div>

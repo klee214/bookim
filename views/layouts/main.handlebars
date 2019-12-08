@@ -2,43 +2,68 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="css/main.css"  rel="stylesheet">
-    <link href="css/home.css"  rel="stylesheet">
-    <link href="css/room.css"  rel="stylesheet">
-    <link href="css/register.css"  rel="stylesheet">
+    <link href="/css/main.css"  rel="stylesheet">
+    <link href="/css/home.css"  rel="stylesheet">
+    <link href="/css/room.css"  rel="stylesheet">
+    <link href="/css/register.css"  rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Gudea|Sunflower:300&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">
-    <script src="js/main.js"></script>
-    <script src="js/home.js"></script>
-    <script src="js/room.js"></script>
-    <script src="js/register.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/room.js"></script>
+    <script src="/js/register.js"></script>
     <title>Bookim-Better Your Life</title>
 </head>
 <body>
     <header>
-         <a href="/"><img class = "logo" src="eb5eb120-b01b-4f60-b96c-9c83232d5529_200x200.png"></a>
+         <a href="/"><img class = "logo" src="/eb5eb120-b01b-4f60-b96c-9c83232d5529_200x200.png"></a>
          <div class = "container-fluid">
             <nav style="font-family: 'Cabin', sans-serif !important;" class="d-flex flex-row-reverse bd-highlight">
-                <div id="logColor" class="p-3 bd-highlight" onclick="log()">LOG IN</div>
-                <div class="p-3 bd-highlight"><a href="register">SIGN UP</a></div>
-                <div class="p-3 bd-highlight"><a href="room">ROOM</a></div>
-                <div class="p-3 bd-highlight"><a href="/">HOME</a></div>
+                {{#if user}}
+                    <form action = "/user/logout" method = "POST">
+                     <div id="logColor" class="p-3 bd-highlight">
+                         <input type="submit" class="SubmitButtonClass" style="border:none;" value="LOG OUT" />
+                    </div>
+                    </form>
+                    <div class="p-3 bd-highlight"><a href="/room/dashboard/{{user._id}}">Dashboard</a></div>                       
+                {{else}}
+                    {{#if errors}}
+                    <div id="logColor" class="p-3 bd-highlight" onclick="log_2()">LOG IN</div>           
+                    {{else}}
+                    <div id="logColor" class="p-3 bd-highlight" onclick="log()">LOG IN</div>             
+                    {{/if}}                
+                    <div class="p-3 bd-highlight"><a href="/user/register">SIGN UP</a></div>              
+                {{/if}}
+                    <div class="p-3 bd-highlight"><a href="/room">ROOM</a></div>
+                    <div class="p-3 bd-highlight"><a href="/">HOME</a></div>                  
             </nav>
             <div id="navMax300px">
                 <div><a href="/">HOME</a></div>
-                <div><a href="room">ROOM</a></div>
-                <div><a href="register">SIGN UP</a></div>
-                <div id="logColor" onclick="log()">LOG IN</div>
+                <div><a href="/room">ROOM</a></div>
+                {{#if user}}
+                    <form action = "/user/logout" method = "POST">
+                     <div id="logColor" class="p-3 bd-highlight">
+                         <input type="submit" class="SubmitButtonClass" style="border:none;" value="LOG OUT" />
+                    </div>
+                    </form>                
+                {{else}}
+                    {{#if errors}}
+                    <div id="logColor" onclick="log_2()">LOG IN</div>                
+                    {{else}}
+                    <div id="logColor" onclick="log()">LOG IN</div>                
+                    {{/if}}                
+                {{/if}}
             </div>
          </div>
     </header>
         {{{body}}}
-    <div id = "logIn" class="container-fluid" onclick="closing()"></div>
-        <div id = "popup" class = "container">
-           <form id="log_in" name = "log_id" method="POST" action="/" onsubmit= 'return formVal()'>
+            {{#if errors}}
+    <div id = "logIn_2" class="container-fluid" onclick="closing_2()"></div>
+        <div id = "popup_2" class = "container">
+           <form id="log_in" name = "log_id" method="POST" action="/user/login" onsubmit= 'return formVal()'>
             <div class="row">
                 <div class="col">
                     <button type="button" name="facebook" id="facebook">
@@ -69,19 +94,68 @@
                 <div class="col">
                     <input type="checkbox" name="remember" id="remember"><label for = "remember" style="font-family: 'Cabin', sans-serif !important;" required = 'required'>&nbsp;&nbsp;Remember me</label>
                 </div>
+                <div class = "w-100"></div>                
+                <div class="col">
+                    <p style="color:red">{{errors}}</p>            
+                </div>             
                 <div class="col">
                     <input type="submit" value="Log in" name="log" id="log">
                 </div>
                 <div class="col">
                     <div>
-                        <a  id ="popSign" href="register" style="font-family: 'Cabin', sans-serif !important;">Sign up</a>  
+                        <a  id ="popSign" href="/user/register" style="font-family: 'Cabin', sans-serif !important;">Sign up</a>  
                     </div>
                 </div>
             </div>
            </form>
+            {{else}}
+    <div id = "logIn" class="container-fluid" onclick="closing()"></div>
+        <div id = "popup" class = "container">            
+            <form id="log_in" name = "log_id" method="POST" action="/user/login" onsubmit= 'return formVal()'>
+            <div class="row">
+                <div class="col">
+                    <button type="button" name="facebook" id="facebook">
+                        <div class= "f">f</div>
+                        <div style="margin: 10px auto 0;" style="font-family: 'Cabin', sans-serif !important;">Log in with Facebook</div>
+                    </button>
+                </div>
+                <div class="col">
+                    <button type="button" name="google" id="google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png">
+                        <div style="margin: 10px auto 0" style="font-family: 'Cabin', sans-serif !important;">Log in with Google</div>
+                    </button>
+                </div>
+                <hr>
+                <div class="col">
+                    <input type="text" placeholder="Email Address" name="email" id="email" required = 'required'>
+                </div>
+                <div class ="col" id ="emailError">
+
+                </div>
+                <div class="col">
+                    <input type="password" placeholder="Password" name="password" id="password">
+                </div>
+                <div class ="col" id ="passError">
+
+                </div>
+                <div class = "w-100"></div>
+                <div class="col">
+                    <input type="checkbox" name="remember" id="remember"><label for = "remember" style="font-family: 'Cabin', sans-serif !important;" required = 'required'>&nbsp;&nbsp;Remember me</label>
+                </div>         
+                <div class="col">
+                    <input type="submit" value="Log in" name="log" id="log">
+                </div>
+                <div class="col">
+                    <div>
+                        <a  id ="popSign" href="/user/register" style="font-family: 'Cabin', sans-serif !important;">Sign up</a>  
+                    </div>
+                </div>
+            </div>
+            </form>
+            {{/if}}
         </div>
         <div id ="footerNav" class="col" onclick="footerNave()">
-            <img class = "logoFooter" src="eb5eb120-b01b-4f60-b96c-9c83232d5529_200x200.png">
+            <img class = "logoFooter" src="/eb5eb120-b01b-4f60-b96c-9c83232d5529_200x200.png">
             Terms, Privacy, Currency & More
         </div>
         <div id ="footerClose" class="col" onclick="footerClosing()">
@@ -174,7 +248,7 @@
                 </div>
             </div>
             <hr>
-            <p style="text-align: center font-family: 'Cabin', sans-serif !important;"><img class = "logoBottom" src="eb5eb120-b01b-4f60-b96c-9c83232d5529_200x200.png">
+            <p style="text-align: center font-family: 'Cabin', sans-serif !important;"><img class = "logoBottom" src="/eb5eb120-b01b-4f60-b96c-9c83232d5529_200x200.png">
                 &nbsp;&nbsp; <img class ="copyRight" src="http://pngimg.com/uploads/copyright/copyright_PNG48.png">       
                2019 Bookim, Inc. All rights reserved. Kimin Lee kiminlee0505@gmail.com</p>
         </div>

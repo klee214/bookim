@@ -1,0 +1,32 @@
+<div id ="backRegImg"></div>
+<div class = "bgCoverBlack"></div>
+<div id="EditingRoom" class = "container-fluid">
+    <h2>Do you want to change your room?</h2>
+     <h4>You can edit any information about your rooms here!</h4>
+</div>
+<div class = "row">
+    {{#if room}}
+        <div class = "col">
+            <form action = "/room/editRoom/{{room._id}}/?_method=PUT" method = "POST">
+                <div id="logColor" class="p-3 bd-highlight">
+                    <div class = "roomImg"><img class="img-thumbnail" src="/uploads/{{room.picURL}}">
+                        <input type="file" id = "roomPic"name="roomPic">
+                    </div>
+                </div>           
+            <p>{{room.title}}</p>
+            <p><input type="text" name="roomTitle" id="roomTitle" value="{{room.title}}"></p>            
+            <h4>Entire house - 2 beds</h4>
+            <p>
+            <input type="text" name="city" id="city" value="{{room.location.city}}">
+            <input type="text" name="province" id="province" value="{{room.location.province}}"> 
+            <input type="text" name="country" id="country" value="{{room.location.country}}">  
+            </p>                                    
+            <p><input type="text" name="roomPrice" id="roomPrice" value="{{room.price}}"> CAD/night</p>
+            <input type="submit" value="Edit">  
+            </form>                               
+        </div>
+    {{/if}} 
+    {{#if createRoomError}}
+    <p>{{createRoomError}}</p>
+    {{/if}}      
+</div>

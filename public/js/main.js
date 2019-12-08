@@ -8,9 +8,27 @@ const closing = ()=>{
     pop.style.visibility = 'hidden';
 }
 
+const closing_2 = ()=>{
+    const logIn_2 = document.querySelector('#logIn_2'); 
+    const pop_2 = document.querySelector('#popup_2'); 
+    logIn_2.style.display = 'none';
+    logIn_2.style.visibility = 'hidden';
+    pop_2.style.display = 'none';
+    pop_2.style.visibility = 'hidden';
+}
+
 const log = ()=>{
     const logIn = document.querySelector('#logIn');
     const pop = document.querySelector('#popup'); 
+    logIn.style.visibility = 'visible';
+    logIn.style.display = 'block';
+    pop.style.visibility = 'visible';
+    pop.style.display = 'block';
+}
+
+const log_2 = ()=>{
+    const logIn = document.querySelector('#logIn_2');
+    const pop = document.querySelector('#popup_2'); 
     logIn.style.visibility = 'visible';
     logIn.style.display = 'block';
     pop.style.visibility = 'visible';

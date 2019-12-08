@@ -1,0 +1,21 @@
+<div id ="backRegImg"></div>
+<div class = "bgCoverBlack"></div>
+<div id="EditingRoom" class = "container-fluid">
+    <h2>Do you want to book the room?</h2>
+    <h4>The room is avaliable right now!!!</h4>
+</div>
+<div class = "row">
+    {{#if room}}
+        <div class = "col">
+            <form action = "/book/{{room._id}}" method = "POST">
+                <div id="logColor" class="p-3 bd-highlight">
+                    <div class = "roomImg"><img class="img-thumbnail" src="/uploads/{{room.picURL}}">
+                        <input type="file" id = "roomPic"name="roomPic">
+                    </div>
+                </div>           
+            <p>{{room.title}}</p>           
+            <input type="submit" value="Book now!">  
+            </form>                               
+        </div>
+    {{/if}}    
+</div>

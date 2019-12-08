@@ -1,0 +1,48 @@
+<div id ="backRegImg"></div>
+<div class = "bgCoverBlack"></div>
+
+<form id="roomAdmin" namd="roomAdmin" method ="POST" action = "/room/admin/createRoom/{{user._id}}" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col">
+            <input type="text" name="roomTitle" id="roomTitle" placeholder="Room Title" required="required">
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+            <textarea id = "desc"name="desc">Description</textarea>
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+            <input type="text" placeholder="Postal Code" id = "postal"name="postal" required="required">
+        </div>
+        <div class="col">
+            <input type="text" placeholder="Street" id = "street"name="street" required="required">
+        </div>        
+        <div class="col">
+            <input type="text" placeholder="City" id = "city"name="city" required="required">
+        </div>        
+        <div class="col">
+            <input type="text" placeholder="Province" id = "province"name="province">
+        </div>        
+        <div class="col">
+            <input type="text" placeholder="Country" id = "country"name="country" required="required">
+        </div>        
+        <div class="w-100"></div>
+        <div class="col">
+            <input type="text" placeholder="US dollar" id = "roomPrice"name="roomPrice" required="required">
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+            <input type="file" id = "roomPic"name="roomPic" required="required">
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+            <input type="submit" value="Host" required="required">
+        </div>        
+        {{#each createRoomError}}
+        <div class="w-100"></div>
+        <div class="col">
+            <p style="color: black;">{{this}}</p>
+        </div>             
+        {{/each}}                           
+    </div>
+</form>

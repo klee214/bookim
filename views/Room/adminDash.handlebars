@@ -1,0 +1,20 @@
+<div id ="backRegImg"></div>
+<div class = "bgCoverBlack"></div>
+<h2>Welcome {{user.fname}} {{user.lname}} ...</h2>
+<a href="/room/admin/createRoom/{{user._id}}" style="color: brown;">Go to host your room!</a>
+
+<div id="EditingRoom" class = "container-fluid">
+    <h2>The rooms you hosted!</h2>
+     <h4>You can edit any information!</h4>
+</div>
+<div class = "row">
+    {{#each rooms}}
+        <div class = "col">
+            <div class = "roomImg"><a href="/room/editRoom/{{this._id}}"><img class="img-thumbnail" src="/uploads/{{this.picURL}}"></a></div>
+            <p>{{this.title}}</p>
+            <h4>Entire house - 2 beds</h4>
+            <h4>{{this.location.city}} {{this.location.province}} {{this.location.country}}</h4>
+            <h4><strong>{{this.price}} CAD</strong>/night</h4>                    
+        </div>
+    {{/each}}       
+</div>

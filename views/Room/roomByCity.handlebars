@@ -1,0 +1,21 @@
+<div id ="backRegImg"></div>
+<div class = "bgCoverBlack"></div>
+{{#if room}}
+<div id="EditingRoom" class = "container-fluid">
+    <h2>Search by City!!</h2>
+    <h4>Found nice rooms in {{room.location.city}}</h4>
+</div>
+{{/if}}
+<div class = "row">
+    {{#each rooms}}
+        <div class = "col">
+            <a href="/book/{{this._id}}">
+            <div class = "roomImg"><a href="/room/editRoom/{{this._id}}"><img class="img-thumbnail" src="/uploads/{{this.picURL}}"></a></div>
+            </a>            
+            <p>{{this.title}}</p>
+            <h4>Entire house - 2 beds</h4>
+            <h4>{{this.location.city}} {{this.location.province}} {{this.location.country}}</h4>
+            <h4><strong>{{this.price}} CAD</strong>/night</h4>                    
+        </div>
+    {{/each}}       
+</div>

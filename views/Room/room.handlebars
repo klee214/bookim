@@ -86,5 +86,23 @@
                 </div>               
             </div>            
         </div>
+
+        <div id="dynamicRoom" class = "container-fluid">
+            <h2>Recently hosted rooms!</h2>
+            <h4>Explore some of the newly hosted cozy rooms!</h4>
+        </div>
+        <div class = "row">
+            {{#each newRoom}}
+                <div class = "col">
+                    <a href= "/book/{{this._id}}">
+                    <div class = "roomImg"><img class="img-thumbnail" src="/uploads/{{this.picURL}}"></div>
+                    </a>                     
+                    <p>{{this.title}}</p>
+                    <h4>Entire house - 2 beds</h4>
+                    <h4>{{this.location.city}} {{this.location.province}} {{this.location.country}}</h4>
+                    <h4><strong>{{this.price}} CAD</strong>/night</h4>                   
+                </div>
+            {{/each}}       
+        </div>
     </div>
 </div>
